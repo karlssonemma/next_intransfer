@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
+
 const Navbar = styled.nav`
     width: 100%;
     height: 200px;
@@ -38,19 +39,30 @@ const NavLink = styled.a`
     }
 `;
 
-const Logo = styled.img`
+const Logo = styled(Image)`
     width: 300px;
     height: auto;
 `;
 
 
 
-const Navigation = ({ assets }) => {
-    // console.log('assets', assets)
+const Navigation = ({ props }) => {
+
+    let logoUrl = 'https:' + props.fields.file.url;
+    let logoWidth = props.fields.file.details.image.width;
+    let logoHeight = props.fields.file.details.image.height;
+    let logoAlt = props.fields.description;
 
     return(
         <Navbar>
-            <a href='#'>hej</a>
+            <a href='#'>
+                <Logo 
+                    src={logoUrl}
+                    alt={logoAlt}
+                    width={logoWidth} 
+                    height={logoHeight}
+                />
+            </a>
             
             <div>
                 <NavLink href="#about">om oss</NavLink>
