@@ -3,11 +3,9 @@ import styled from 'styled-components';
 import PageSection from '../PageSection';
 
 
-export default function Landing ({ props }) {
+export default function Landing({ props }) {
 
-    console.log(props)
-
-    let title = props[0].fields.title;
+    let title = props.fields.title;
 
     const Container = styled.article`
     width: 100%;

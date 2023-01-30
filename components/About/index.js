@@ -23,7 +23,7 @@ const Subtitle = styled.h2`
 
 export default function About({ props }) {
 
-    const data = props[0].fields;
+    const data = props.fields;
 
     const title = data.title;
     const body = data.body.content[0].content[0].value;
