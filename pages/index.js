@@ -1,22 +1,24 @@
-import About from '@/components/About'
-import Contact from '@/components/Contact'
-import Landing from '@/components/Landing'
-import Navigation from '@/components/Navigation'
-import { createClient } from 'contentful'
+import About from '@/components/About';
+import Contact from '@/components/Contact';
+import Landing from '@/components/Landing';
+import Navigation from '@/components/Navigation';
+// import { createClient } from 'contentful';
 
-let client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-});
+import { client, createContentfulClient } from '@/contentful/client';
+
+// const client = createClient({
+//   space: process.env.CONTENTFUL_SPACE_ID,
+//   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+// });
 
 
-export default function Home({ landing }) {
-  console.log(landing)
+export default function Home({ landing, about }) {
+
   return (
     <>
-      {/* <Navigation /> */}
+      <Navigation />
       <Landing props={landing} />
-      <About />
+      <About props={about} />
       <Contact />
     </>
   )
@@ -24,11 +26,17 @@ export default function Home({ landing }) {
 
 export async function getStaticProps() {
 
-  const res = await client.getEntries({ content_type: 'landing' })
+  createContentfulClient();
+
+
+  const landing = await client.getEntries({ content_type: 'landing' })
+  const about = await client.getEntries({ content_type: 'about' })
 
   return {
     props: {
-      landing: res.items
+      landing: landing.items,
+      about: about.items
+
     }
   }
 };

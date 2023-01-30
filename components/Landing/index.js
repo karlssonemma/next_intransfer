@@ -5,6 +5,8 @@ import PageSection from '../PageSection';
 
 export default function Landing ({ props }) {
 
+    console.log(props)
+
     let title = props[0].fields.title;
 
     const Container = styled.article`
@@ -43,7 +45,7 @@ export default function Landing ({ props }) {
         <PageSection>
             {/* <BgImage src='/bank-phrom-Tzm3Oyu_6sk-unsplash.jpg' /> */}
             <Container>
-                <Title>Vi printar logos.</Title>
+                <Title>{title}</Title>
                 <p>Structured Query Language är ett standardiserat programspråk för att hämta och modifiera data i en relationsdatabas. SQL uttalas bokstav för bokstav eller ibland "s'ikuell" som i engelskans "sequel"</p>
                 {/* <CtaLink /> */}
             </Container>

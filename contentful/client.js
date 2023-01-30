@@ -1,12 +1,13 @@
 import { createClient } from 'contentful';
 
+let client; 
 
 const createContentfulClient = () => {
-    let client = createClient({
+    client = createClient({
         space: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
     });
     return client;
 };
 
-// export const client = createContentfulClient();
+export { client, createContentfulClient };

@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import { createClient } from 'contentful';
-
-let client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-});
 
 const Navbar = styled.nav`
     width: 100%;
@@ -66,15 +60,5 @@ const Navigation = ({ assets }) => {
     )
 };
 
-export async function getStaticProps() {
-
-    const res = await client.getAssets();
-    
-      return {
-        props: {
-          landing: res.items
-        }
-      }
-};
 
 export default Navigation;
