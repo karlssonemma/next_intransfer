@@ -25,12 +25,14 @@ export default function About({ props }) {
 
     const data = props.fields;
 
-    const title = data.title;
-    const body = data.body.content[0].content[0].value;
+    const title = props.fields.title;
+    const body = props.fields.body;
+
+    console.log("ABOUT", props)
 
     
     return(
-        <PageSection>
+        <PageSection className='about-section'>
             <Subtitle>{title}</Subtitle>
             <Body>{body}</Body>
         </PageSection>

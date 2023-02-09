@@ -4,7 +4,8 @@ const theme = {
         white: '#FFFFFF',
         orange: '#CF6902',
         darkred: '#692017',
-        black: '#22222'
+        black: '#22222',
+        lightgray: '#e6e6e6'
     },
     fonts: {
         main: 'Futura, "sans-serif"'

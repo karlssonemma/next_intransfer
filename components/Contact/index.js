@@ -63,7 +63,7 @@ export default function Contact({ props }) {
     const { body, title, contactInfo } = props.fields;
 
     return(
-        <PageSection>
+        <PageSection className='contact-section'>
             <Container>
             <ContactText>
                 <p>{title}</p>
@@ -79,6 +79,7 @@ export default function Contact({ props }) {
                                 src={url} 
                                 width={512} 
                                 height={512}
+                                alt=''
                             />
                             <Link href={text}>{text}</Link>
                         </li>

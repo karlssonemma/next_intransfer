@@ -3,6 +3,7 @@ import Contact from '@/components/Contact';
 import Landing from '@/components/Landing';
 import Gallery from '@/components/Gallery';
 import Navigation from '@/components/Navigation';
+import Form from '@/components/Form';
 // import { createClient } from 'contentful';
 
 import { client, createContentfulClient } from '@/contentful/client';
@@ -18,6 +19,7 @@ export default function Home({ landing, about, nav, contact, gallery }) {
       <About props={about} />
       <Gallery props={gallery} />
       <Contact props={contact} />
+      <Form />
     </>
   )
 };

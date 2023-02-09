@@ -34,7 +34,7 @@ export default function Gallery({ props }) {
     const imagesArray = props.fields.images;    
 
     return(
-        <PageSection>
+        <PageSection className='gallery-section'>
             <GridContainer>
                 {imagesArray.map(img => {
 

@@ -1,13 +1,9 @@
 import styled from 'styled-components';
-
 import PageSection from '../PageSection';
+import Image from 'next/image';
+import CtaLink from '../CtaLink';
 
-
-export default function Landing({ props }) {
-
-    let title = props.fields.title;
-
-    const Container = styled.article`
+const Container = styled.article`
     width: 100%;
     height: max-content;
     padding: ${props => props.theme.space[5]};
@@ -26,7 +22,7 @@ export default function Landing({ props }) {
     }
   `;
 
-    const BgImage = styled.img`
+    const BgImage = styled(Image)`
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -39,13 +35,36 @@ export default function Landing({ props }) {
         font-weight: 400;
     `;
 
+    
+
+
+export default function Landing({ props }) {
+
+    let { title, body } = props.fields;
+    let bgUrl = 'https:' + props.fields.background.fields.file.url;
+    let bgWidth = props.fields.background.fields.file.details.image.width;
+    let bgHeight = props.fields.background.fields.file.details.image.height;
+
+    let ctaIconUrl = 'https:' + props.fields.cta.fields.icon.fields.file.url;
+    let ctaText = props.fields.cta.fields.text;
+
+    console.log("LAND", props)
+
     return(
-        <PageSection>
-            {/* <BgImage src='/bank-phrom-Tzm3Oyu_6sk-unsplash.jpg' /> */}
+        <PageSection className='landing-section'>
+            <BgImage 
+                src={bgUrl}
+                width={bgWidth}
+                height={bgHeight}
+            />
             <Container>
                 <Title>{title}</Title>
-                <p>Structured Query Language är ett standardiserat programspråk för att hämta och modifiera data i en relationsdatabas. SQL uttalas bokstav för bokstav eller ibland "s'ikuell" som i engelskans "sequel"</p>
-                {/* <CtaLink /> */}
+                <p>{body}</p>
+                <CtaLink 
+                    href='#contact'
+                    iconUrl={ctaIconUrl}
+                    text={ctaText}
+                />
             </Container>
         </PageSection>
     )
