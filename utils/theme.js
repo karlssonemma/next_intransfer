@@ -3,6 +3,7 @@ const theme = {
     colors: {
         white: '#FFFFFF',
         orange: '#CF6902',
+        darkorange: '#A25202',
         darkred: '#692017',
         black: '#22222',
         lightgray: '#e6e6e6'

@@ -23,13 +23,16 @@ const Title = styled.h2`
 const SubmitBtn = styled.button`
     border: none;
     padding: 1.5em;
+    margin-top: 1.5em;
     border-radius: .5em;
     background-color: ${props => props.theme.colors.orange};
     font-family: ${props => props.theme.fonts.main};
     font-weight: 300;
+    font-size: ${props => props.theme.fontSizes.s};
     transition: .2s all;
+    cursor: pointer;
     &:hover {
-        filter: saturate(0.5);
+        background-color: ${props => props.theme.colors.darkorange};
     }
 
 `;
@@ -39,11 +42,15 @@ export default function Form({ props }) {
 
     const [state, handleSubmit] = useForm('mpzepdvb');
     if (state.succeeded) {
-        return <p>We'll be in touch shortly!</p>
+        return(
+            <PageSection>
+                <p>We'll be in touch shortly!</p>
+            </PageSection>
+        )
     }
 
     return(
-        <PageSection className='contact-section'>
+        <PageSection id='contact' className='contact-section'>
 
             <Title>Kontakta oss här</Title>
 

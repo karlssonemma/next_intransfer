@@ -1,17 +1,10 @@
 import PageSection from '../PageSection';
-import styled from 'styled-components';
 import theme from '@/utils/theme';
 
-const Body = styled.p`
-    font-family: ${props => props.theme.fonts.main};
-    line-height: 180%;
+import styled from 'styled-components';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS } from '@contentful/rich-text-types';
 
-    font-weight: 200;
-
-    @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
-    width: 50%;
-    }
-`;
 
 const Subtitle = styled.h2`
     margin-bottom: ${props => props.theme.space[2]};
@@ -21,20 +14,41 @@ const Subtitle = styled.h2`
     font-weight: 400;
 `;
 
-export default function About({ props }) {
+const Paragraph = styled.p`
+    margin-bottom: 1em;
 
-    const data = props.fields;
+    font-family: ${props => props.theme.fonts.main};
+    line-height: 180%;
+    font-weight: 200;
+
+    @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
+        width: 50%;
+      }
+`;
+
+export default function About({ props }) {
 
     const title = props.fields.title;
     const body = props.fields.body;
 
-    console.log("ABOUT", props)
+    const renderOptions = {
+        renderText: (text) => {
+          return text.split('\n').reduce((children, textSegment, index) => {
+            return [...children, index > 0 && <br key={index} />, textSegment];
+          }, []);
+        }, renderNode: {
+            [BLOCKS.PARAGRAPH]: (node, children) => {
+                return(
+                    <Paragraph>{children}</Paragraph>
+                )
+            }
+        }
+      };
 
-    
     return(
-        <PageSection className='about-section'>
+        <PageSection id='about' className='about-section'>
             <Subtitle>{title}</Subtitle>
-            <Body>{body}</Body>
+            {documentToReactComponents(body, renderOptions)}
         </PageSection>
     )
 };
