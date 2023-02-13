@@ -6,19 +6,21 @@ import Navigation from '@/components/Navigation';
 import Form from '@/components/Form';
 // import { createClient } from 'contentful';
 import { client, createContentfulClient } from '@/contentful/client';
+import Footer from '@/components/Footer';
 
 
 
-export default function Home({ landing, about, nav, contact, gallery }) {
+export default function Home({ landing, about, logoAsset, contact, gallery }) {
 
   return (
     <>
-      <Navigation props={nav} />
+      <Navigation props={logoAsset} />
       <Landing props={landing} />
       <About props={about} />
       <Gallery props={gallery} />
       {/* <Contact props={contact} /> */}
       <Form />
+      <Footer />
     </>
   )
 };
@@ -31,14 +33,14 @@ export async function getStaticProps() {
   const about = await client.getEntry('2Op6bwV5GoaBMp8l4iN7rP');
   const contact = await client.getEntry('aQ4aUeONnrEztHdAEFdQp');
   const gallery = await client.getEntry('5DUYZ6VAbTusti9nhYxQWQ');
-  const nav = await client.getAsset('1Vqg45aAjsyAbdrczafG3y');
+  const logoAsset = await client.getAsset('1Vqg45aAjsyAbdrczafG3y');
 
   return {
     props: {
       landing,
       about,
       contact,
-      nav,
+      logoAsset,
       gallery
     }
   }
