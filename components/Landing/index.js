@@ -15,7 +15,7 @@ const Container = styled.article`
 
     background-color: ${props => props.theme.colors.white};
     font-weight: 200;
-    line-height: 180%;
+    /* line-height: 180%; */
 
     z-index: 10;
 

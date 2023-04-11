@@ -70,10 +70,23 @@ const ByLine = styled.p`
     font-weight: 200;
     letter-spacing: .75px;
     color: ${props => props.theme.colors.darkgray};
+    text-align: center;
 
     a, a:hover, a:focus, a:active {
         text-decoration: none;
         color: inherit;
+    }
+
+    @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
+        text-align: left;
+    }
+`;
+
+const LogoContainer = styled.div`
+    margin-top: 4em;
+
+    @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
+        margin-top: 0;
     }
 `;
 
@@ -84,12 +97,7 @@ function Footer({ props }) {
 
     return(
         <Container>
-            <div>
-                <Logo asset={logoAsset} />
-                <ByLine>Design & development by 
-                    <a href='https://karlssonemma.com' target='_blank' rel='noreferrer'> Emma Karlsson</a>
-                </ByLine>
-            </div>
+            
            <ContactItemsList>
                 {contactInfo.map(item => {
                     let iconUrl = 'https:' + item.fields.icon.fields.file.url;
@@ -115,6 +123,12 @@ function Footer({ props }) {
                     )
                 })} 
             </ContactItemsList>
+            <LogoContainer>
+                <Logo asset={logoAsset} />
+                <ByLine>Design & development by 
+                    <a href='https://karlssonemma.com' target='_blank' rel='noreferrer'> Emma Karlsson</a>
+                </ByLine>
+            </LogoContainer>
         </Container>
     )
 
