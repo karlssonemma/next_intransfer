@@ -87,7 +87,7 @@ function Footer({ props }) {
             <div>
                 <Logo asset={logoAsset} />
                 <ByLine>Design & development by 
-                    <a href='https://karlssonemma.com' target='_blank'> Emma Karlsson</a>
+                    <a href='https://karlssonemma.com' target='_blank' rel='noreferrer'> Emma Karlsson</a>
                 </ByLine>
             </div>
            <ContactItemsList>
