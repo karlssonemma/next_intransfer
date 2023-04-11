@@ -17,14 +17,14 @@ const Title = styled.h2`
     font-size: ${props => props.theme.fontSizes.xl};
     font-weight: 400;
 
-    margin-bottom: 3em;
+    margin-bottom: ${props => props.theme.space[4]};
 `;
 
 const SubmitBtn = styled.button`
     border: none;
-    padding: 1.5em;
-    margin-top: 1.5em;
-    border-radius: .5em;
+    padding: ${props => props.theme.space[4]};
+    margin-top: ${props => props.theme.space[4]};
+    border-radius: ${props => props.theme.space[1]};
     background-color: ${props => props.theme.colors.orange};
     font-family: ${props => props.theme.fonts.main};
     font-weight: 300;

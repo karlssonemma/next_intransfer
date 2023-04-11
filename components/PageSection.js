@@ -6,7 +6,7 @@ const PageSection = styled.section`
     min-height: 100vh;
     height: max-content;
     background-color: white;
-    padding: 0 ${props => props.theme.space[5]};
+    padding: ${props => props.theme.space[6]} ${props => props.theme.space[5]};
 
     display: flex;
     //annan løsning bætter om man vill ændra font i framtiden
@@ -21,7 +21,7 @@ const PageSection = styled.section`
 
     &.landing-section {
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
       padding: 0;
 
       @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {

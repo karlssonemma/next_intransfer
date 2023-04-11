@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const LogoImage = styled(Image)`
     width: 300px;
     height: auto;
+    object-fit: contain;
 `;
 
 const Logo = ({ asset }) => {

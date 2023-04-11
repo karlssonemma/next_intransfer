@@ -6,7 +6,7 @@ import CtaLink from '../CtaLink';
 const Container = styled.article`
     width: 100%;
     height: max-content;
-    padding: ${props => props.theme.space[5]};
+    padding: ${props => props.theme.space[6]};
 
     background-color: ${props => props.theme.colors.white};
     font-family: ${props => props.theme.fonts.main};
@@ -47,8 +47,6 @@ export default function Landing({ props }) {
 
     let ctaIconUrl = 'https:' + props.fields.cta.fields.icon.fields.file.url;
     let ctaText = props.fields.cta.fields.text;
-
-    console.log("LAND", props)
 
     return(
         <PageSection className='landing-section'>

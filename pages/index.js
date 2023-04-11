@@ -20,7 +20,7 @@ export default function Home({ landing, about, logoAsset, contact, gallery }) {
       <Gallery props={gallery} />
       {/* <Contact props={contact} /> */}
       <Form />
-      <Footer />
+      <Footer props={{logoAsset, contact}} />
     </>
   )
 };

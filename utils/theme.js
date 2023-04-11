@@ -18,7 +18,7 @@ const theme = {
         lg: '1.5rem',
         xl: '2rem'
     },
-    space: ['0.25em', '0.5em', '0.75em', '1em', '1.5em', '2em']
+    space: ['0.25em', '0.5em', '0.75em', '1em', '1.5em', '2em', '4em']
 };
 
 export default theme;
