@@ -1,30 +1,13 @@
-import PageSection from '../PageSection';
-import theme from '@/utils/theme';
-
 import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 
+import theme from '@/utils/theme';
+import PageSection from '../PageSection';
+import Subtitle from '../Subtitle';
+import Text from '../Text';
 
-const Subtitle = styled.h2`
-    margin-bottom: ${props => props.theme.space[2]};
 
-    font-size: ${props => props.theme.fontSizes.l};
-    font-family: ${props => props.theme.fonts.main};
-    font-weight: 400;
-`;
-
-const Paragraph = styled.p`
-    margin-bottom: 1em;
-
-    font-family: ${props => props.theme.fonts.main};
-    line-height: 180%;
-    font-weight: 200;
-
-    @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
-        width: 50%;
-      }
-`;
 
 export default function About({ props }) {
 
@@ -39,7 +22,7 @@ export default function About({ props }) {
         }, renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => {
                 return(
-                    <Paragraph>{children}</Paragraph>
+                    <Text>{children}</Text>
                 )
             }
         }

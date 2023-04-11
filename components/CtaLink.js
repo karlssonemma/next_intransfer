@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 const Link = styled.a`
+    font-family: ${props => props.theme.fonts.sans};
     display: block;
     color: ${props => props.theme.colors.orange};
     cursor: pointer;

@@ -5,23 +5,29 @@ import theme from '@/utils/theme';
 export default function InputBlock({ label, type, name, as, ...props }) {
 
     const InputField = styled.input`
-        background-color: ${props => props.theme.colors.lightgray};
+        width: 100%;
         border: none;
         padding: 1.5em;
         margin-bottom: 1.5em;
         border-radius: .5em;
+
+        background-color: ${props => props.theme.colors.lightgray};
         font-family: ${props => props.theme.fonts.main};
         font-weight: 300;
     `;
 
     const InputLabel = styled.label`
+        width: 100%;
+        padding-bottom: .8em;
+        
         display: flex;
         flex-direction: column;
+        
+        font-family: ${props => props.theme.fonts.sans};
         font-size: ${props => props.theme.fontSizes.xs};
         font-weight: 300;
         text-indent: 1.2rem;
         text-transform: uppercase;
-        padding-bottom: .8em;
         letter-spacing: .2em;
     `;
 

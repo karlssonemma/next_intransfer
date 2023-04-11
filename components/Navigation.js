@@ -24,7 +24,7 @@ const Navbar = styled.nav`
 `;
 
 const NavLink = styled.a`
-    font-family: ${props => props.theme.fonts.main};
+    font-family: ${props => props.theme.fonts.sans};
     margin-left: 2em;
     display: none;
     font-weight: 400;

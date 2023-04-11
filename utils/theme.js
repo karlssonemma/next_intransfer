@@ -9,7 +9,8 @@ const theme = {
         lightgray: '#e6e6e6'
     },
     fonts: {
-        main: 'Futura, "sans-serif"'
+        serif: '"Aleo", serif',
+        sans: '"Futura", sans-serif',
     },
     fontSizes: {
         xs: '0.75rem',

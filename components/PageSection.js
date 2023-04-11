@@ -35,6 +35,11 @@ const PageSection = styled.section`
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
+        & p {
+          width: 50%;
+        }
+      }
     }
 
     &.image-section {

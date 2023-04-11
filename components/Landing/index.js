@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import PageSection from '../PageSection';
 import Image from 'next/image';
 import CtaLink from '../CtaLink';
+import Title from '../Title';
+import Text from '../Text';
+import Button from '../Button';
 
 const Container = styled.article`
     width: 100%;
@@ -9,7 +14,6 @@ const Container = styled.article`
     padding: ${props => props.theme.space[6]};
 
     background-color: ${props => props.theme.colors.white};
-    font-family: ${props => props.theme.fonts.main};
     font-weight: 200;
     line-height: 180%;
 
@@ -28,14 +32,6 @@ const Container = styled.article`
         object-fit: cover;
         position: absolute;
     `;
-
-    const Title = styled.h1`
-        font-size: ${props => props.theme.fontSizes.xl};
-        margin-bottom: ${props => props.theme.space[2]};
-        font-weight: 400;
-    `;
-
-    
 
 
 export default function Landing({ props }) {
@@ -57,12 +53,10 @@ export default function Landing({ props }) {
             />
             <Container>
                 <Title>{title}</Title>
-                <p>{body}</p>
-                <CtaLink 
-                    href='#contact'
-                    iconUrl={ctaIconUrl}
-                    text={ctaText}
-                />
+                <Text>{body}</Text>
+                <Button as='a' href='#contact'>
+                    Kontakta oss här
+                </Button>
             </Container>
         </PageSection>
     )

@@ -41,7 +41,7 @@ const ContactItemsList = styled.ul`
     align-items: center;
     list-style: none;
 
-    font-family: ${props => props.theme.fonts.main};
+    font-family: ${props => props.theme.fonts.sans};
     font-weight: 300;
 
     @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
@@ -75,6 +75,8 @@ function Footer({ props }) {
                 {contactInfo.map(item => {
                     let url = 'https:' + item.fields.icon.fields.file.url;
                     let text = item.fields.text;
+
+                    console.log('item',item)
                     return(
                         <li>
                             <Icon 
