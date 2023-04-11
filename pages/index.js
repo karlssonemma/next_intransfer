@@ -18,7 +18,7 @@ export default function Home({ landing, about, logoAsset, contact, gallery }) {
       <Landing props={landing} />
       <About props={about} />
       <Gallery props={gallery} />
-      <Contact props={contact} />
+      {/* <Contact props={contact} /> */}
       <Form />
       <Footer props={{logoAsset, contact}} />
     </>
