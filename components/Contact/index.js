@@ -74,7 +74,7 @@ export default function Contact({ props }) {
                     let url = 'https:' + item.fields.icon.fields.file.url;
                     let text = item.fields.text;
                     return(
-                        <li>
+                        <li key={item.sys.id}>
                             <Icon 
                                 src={url} 
                                 width={512} 

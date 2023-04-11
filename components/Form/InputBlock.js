@@ -34,7 +34,7 @@ export default function InputBlock({ label, type, name, as, ...props }) {
 
     return(
         <>
-            <InputLabel for={name}>
+            <InputLabel htmlFor={name}>
                 {label}{props.required && '*'}
             </InputLabel>
             <InputField 

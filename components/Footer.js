@@ -100,7 +100,7 @@ function Footer({ props }) {
 
                     console.log('item',item)
                     return(
-                        <li>
+                        <li key={item.sys.id}>
                             <Icon 
                                 src={iconUrl} 
                                 width={512} 

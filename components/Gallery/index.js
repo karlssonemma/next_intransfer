@@ -47,6 +47,7 @@ export default function Gallery({ props }) {
                             src={url}
                             width={width}
                             height={height}
+                            key={img.sys.id}
                         />
                     )
                 })}
