@@ -24,13 +24,19 @@ const Navbar = styled.nav`
 `;
 
 const NavLink = styled.a`
-    font-family: ${props => props.theme.fonts.sans};
     margin-left: 2em;
     display: none;
-    font-weight: 400;
     scroll-behavior: smooth;
     text-decoration: none;
     color: black;
+
+    font-size: ${props => props.theme.fontSizes.xs};
+    font-weight: 400;
+    font-family: ${props => props.theme.fonts.sans};
+    text-transform: uppercase;
+    letter-spacing: .1em;
+
+    transition: .2s all;
 
     &:hover {
         color: ${props => props.theme.colors.orange};

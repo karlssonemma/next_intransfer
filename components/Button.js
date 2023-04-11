@@ -27,7 +27,7 @@ const Button = styled.button`
     }
     
     &:hover {
-        background-color: ${props => props.theme.colors.darkorange};
+        opacity: 0.6;
     }
 `;
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '@/utils/theme';
 import Logo from './Logo';
 
 import Link from 'next/link';
@@ -24,9 +25,9 @@ const Container = styled.footer`
 `;
 
 const Icon = styled.img`
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    margin-right: 17px;
     position: relative;
     top: 4px;
 `;
@@ -53,13 +54,26 @@ const ContactItemsList = styled.ul`
 const ContactItemText = styled.p`
     display: inline-block;
     text-decoration: none;
-    color: black;
+    color: inherit;
     margin-bottom: .5em;
     line-height: 180%;
     letter-spacing: .75px;
+    transition: .2s all;
+    font-size: ${props => props.theme.fontSizes.s};
+`;
 
-    &:hover {
-        text-decoration: ${props => props.$isLink && 'underline'}
+const ByLine = styled.p`
+    margin-top: 2em;
+
+    font-family: ${props => props.theme.fonts.sans};
+    font-size: ${props => props.theme.fontSizes.xs};
+    font-weight: 200;
+    letter-spacing: .75px;
+    color: ${props => props.theme.colors.darkgray};
+
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
     }
 `;
 
@@ -70,23 +84,31 @@ function Footer({ props }) {
 
     return(
         <Container>
-            <Logo asset={logoAsset} />
+            <div>
+                <Logo asset={logoAsset} />
+                <ByLine>Design & development by 
+                    <a href='https://karlssonemma.com' target='_blank'> Emma Karlsson</a>
+                </ByLine>
+            </div>
            <ContactItemsList>
                 {contactInfo.map(item => {
-                    let url = 'https:' + item.fields.icon.fields.file.url;
+                    let iconUrl = 'https:' + item.fields.icon.fields.file.url;
                     let text = item.fields.text;
+                    let target = item.fields.text.includes('@') 
+                    ? 'mailto:' + item.fields.text 
+                    : '';
 
                     console.log('item',item)
                     return(
                         <li>
                             <Icon 
-                                src={url} 
+                                src={iconUrl} 
                                 width={512} 
                                 height={512}
                                 alt=''
                             />
                             {item.fields.isLink 
-                                ? <ContactItemText as={Link} href={text} $isLink={true}>{text}</ContactItemText>
+                                ? <ContactItemText as='a' href={target} $isLink={true}>{text}</ContactItemText>
                                 : <ContactItemText>{text}</ContactItemText>
                             }
                         </li>

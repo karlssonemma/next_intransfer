@@ -4,6 +4,7 @@ import Image from 'next/image';
 import InputBlock from './InputBlock';
 import Title from '../Title';
 import Button from '../Button';
+import Text from '../Text';
 
 import { useForm, ValidationError } from '@formspree/react';
 
@@ -16,6 +17,10 @@ const StyledForm = styled.form`
     max-width: 100%;
 `;
 
+const Message = styled(Text)`
+    margin: 0 auto;
+`;
+
 
 export default function Form({ props }) {
 
@@ -23,7 +28,7 @@ export default function Form({ props }) {
     if (state.succeeded) {
         return(
             <PageSection>
-                <p>We'll be in touch shortly!</p>
+                <Message>Tack för ditt meddelande. Du hör ifrån oss inom kort!</Message>
             </PageSection>
         )
     };

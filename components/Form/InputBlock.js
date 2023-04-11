@@ -12,7 +12,7 @@ export default function InputBlock({ label, type, name, as, ...props }) {
         border-radius: .5em;
 
         background-color: ${props => props.theme.colors.lightgray};
-        font-family: ${props => props.theme.fonts.main};
+        font-family: ${props => props.theme.fonts.serif};
         font-weight: 300;
     `;
 
@@ -28,7 +28,7 @@ export default function InputBlock({ label, type, name, as, ...props }) {
         font-weight: 300;
         text-indent: 1.2rem;
         text-transform: uppercase;
-        letter-spacing: .2em;
+        letter-spacing: .1em;
     `;
 
 

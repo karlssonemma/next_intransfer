@@ -6,7 +6,7 @@ const Text = styled.p`
 
     font-family: ${props => props.theme.fonts.serif};
     line-height: 180%;
-    font-weight: 200;
+    font-weight: 300;
 `;
 
 export default Text;
