@@ -17,6 +17,7 @@ const Button = styled.button`
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: .10em;
+    text-align: center;
 
     transition: .2s all;
     scroll-behavior: smooth;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const LogoImage = styled(Image)`
-    width: 300px;
+    width: 250px;
     height: auto;
     object-fit: contain;
 `;

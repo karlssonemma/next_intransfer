@@ -20,11 +20,14 @@ const PageSection = styled.section`
     }
 
     &.landing-section {
-      justify-content: center;
-      align-items: center;
+      /* justify-content: center;
+      align-items: center; */
+      flex-direction: column;
+      overflow: visible;
       padding: 0;
 
       @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
+        flex-direction: row;
         justify-content: flex-end;
         align-items: center;
         position: relative;

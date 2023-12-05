@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 
 import PageSection from '../PageSection';
 import Image from 'next/image';
-import CtaLink from '../CtaLink';
 import Title from '../Title';
 import Text from '../Text';
 import Button from '../Button';
@@ -15,7 +13,6 @@ const Container = styled.article`
 
     background-color: ${props => props.theme.colors.white};
     font-weight: 200;
-    /* line-height: 180%; */
 
     z-index: 10;
 
@@ -30,7 +27,11 @@ const Container = styled.article`
         width: 100%;
         height: 100%;
         object-fit: cover;
-        position: absolute;
+        position: static;
+
+        @media screen and (min-width: ${props => props.theme.breakpoints[1]}) {
+            position: absolute;
+        }
     `;
 
 
@@ -41,8 +42,6 @@ export default function Landing({ props }) {
     let bgWidth = props.fields.background.fields.file.details.image.width;
     let bgHeight = props.fields.background.fields.file.details.image.height;
 
-    let ctaIconUrl = 'https:' + props.fields.cta.fields.icon.fields.file.url;
-    let ctaText = props.fields.cta.fields.text;
 
     return(
         <PageSection className='landing-section'>

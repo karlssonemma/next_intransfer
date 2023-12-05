@@ -94,7 +94,7 @@ export default function Contact({ props }) {
     let emailUrl = 'https:' + emailIcon.fields.file.url;
 
     return(
-        <PageSection className='contact-section'>
+        <PageSection className='contact-section' id='contact'>
             <ContactText>
                 <Title>{title}</Title>
                 <Text>{body}</Text>

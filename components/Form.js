@@ -1,10 +1,10 @@
-import PageSection from '../PageSection';
+import PageSection from './PageSection';
 import styled from 'styled-components';
 import Image from 'next/image';
 import InputBlock from './InputBlock';
-import Title from '../Title';
-import Button from '../Button';
-import Text from '../Text';
+import Title from './Title';
+import Button from './Button';
+import Text from './Text';
 
 import { useForm, ValidationError } from '@formspree/react';
 

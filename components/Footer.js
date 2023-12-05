@@ -9,11 +9,10 @@ const Container = styled.footer`
     max-width: 100vw;
     height: max-content;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
     margin: ${props => props.theme.space[6]};
-    padding-top: ${props => props.theme.space[6]}; 
     border-top: 1px solid ${props => props.theme.colors.lightgray};
     /* background-color: ${props => props.theme.colors.orange}; */
 
@@ -21,6 +20,7 @@ const Container = styled.footer`
         margin: ${props => props.theme.space[6]} 200px;
         flex-direction: row;
         align-items: flex-start;
+        padding-top: ${props => props.theme.space[6]}; 
     }
 `;
 
@@ -90,44 +90,43 @@ const LogoContainer = styled.div`
     }
 `;
 
+const ListItem = ({ icon, text }) => {
+    return(
+        <li>
+            <Icon 
+                src={icon} 
+                width={512} 
+                height={512}
+                alt=''
+            />
+            <ContactItemText>{text}</ContactItemText>
+        </li>
+    )
+}
+
 function Footer({ props }) {
 
-    const { contact, logoAsset } = props;
-    const { body, title, contactInfo } = contact.fields;
+    const { footer, logoAsset } = props;
+
+    const data = footer.fields;
+
+    console.log('FOOOT', footer)
 
     return(
         <Container>
-            
            <ContactItemsList>
-                {/* {contactInfo.map(item => {
-                    let iconUrl = 'https:' + item.fields.icon.fields.file.url;
-                    let text = item.fields.text;
-                    let target = item.fields.text.includes('@') 
-                    ? 'mailto:' + item.fields.text 
-                    : '';
-
-                    console.log('item',item)
-                    return(
-                        <li key={item.sys.id}>
-                            <Icon 
-                                src={iconUrl} 
-                                width={512} 
-                                height={512}
-                                alt=''
-                            />
-                            {item.fields.isLink 
-                                ? <ContactItemText as='a' href={target} $isLink={true}>{text}</ContactItemText>
-                                : <ContactItemText>{text}</ContactItemText>
-                            }
-                        </li>
-                    )
-                })}  */}
-            </ContactItemsList>
-            <LogoContainer>
-                <Logo asset={logoAsset} />
+                <ListItem  icon={data.emailIcon.fields.file.url} text={data.email} />
+                <ListItem  icon={data.phoneIcon.fields.file.url} text={data.phone} />
+                <ListItem  icon={data.locationIcon.fields.file.url} text={data.address} />
                 <ByLine>Design & development by 
                     <a href='https://karlssonemma.com' target='_blank' rel='noreferrer'> Emma Karlsson</a>
                 </ByLine>
+            </ContactItemsList>
+            <LogoContainer>
+                <Logo asset={logoAsset} />
+                {/* <ByLine>Design & development by 
+                    <a href='https://karlssonemma.com' target='_blank' rel='noreferrer'> Emma Karlsson</a>
+                </ByLine> */}
             </LogoContainer>
         </Container>
     )

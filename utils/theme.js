@@ -6,7 +6,7 @@ const theme = {
         darkorange: '#A25202',
         darkred: '#692017',
         black: '#22222',
-        lightgray: '#e6e6e6'
+        lightgray: '#d6d6d6'
     },
     fonts: {
         serif: '"Aleo", serif',
