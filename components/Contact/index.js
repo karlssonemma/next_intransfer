@@ -22,7 +22,6 @@ const ContactText = styled.article`
     margin-bottom: ${props => props.theme.space[4]};
 
     font-weight: 200;
-    line-height: 180%;
     text-align:center;
 `;
 

@@ -9,7 +9,7 @@ import Button from '../Button';
 const Container = styled.article`
     width: 100%;
     height: max-content;
-    padding: ${props => props.theme.space[6]};
+    padding: ${props => props.theme.space[6]} ${props => props.theme.space[5]};
 
     background-color: ${props => props.theme.colors.white};
     font-weight: 200;
