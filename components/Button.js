@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = styled.button`
     display: block;
-    width: max-content;
+    width: 100%;
     padding: ${props => props.theme.space[4]} ${props => props.theme.space[6]};
     margin-top: ${props => props.theme.space[3]};
     border: none;

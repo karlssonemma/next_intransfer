@@ -13,8 +13,7 @@ const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 500px;
-    max-width: 100%;
+    width: 100%;
 `;
 
 const Message = styled(Text)`
@@ -27,17 +26,11 @@ export default function Form({ props }) {
     const [state, handleSubmit] = useForm('mpzepdvb');
     if (state.succeeded) {
         return(
-            <PageSection>
                 <Message>Tack för ditt meddelande. Du hör ifrån oss inom kort!</Message>
-            </PageSection>
         )
     };
 
     return(
-        <PageSection id='contact' className='contact-section'>
-
-            <Title>Kontakta oss här</Title>
-
            <StyledForm onSubmit={handleSubmit}>
             <ValidationError 
                 field='email' 
@@ -75,7 +68,5 @@ export default function Form({ props }) {
                 Skicka
             </Button>
            </StyledForm>
-
-        </PageSection>
     )
 }
