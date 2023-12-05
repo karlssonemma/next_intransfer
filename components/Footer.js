@@ -99,7 +99,7 @@ function Footer({ props }) {
         <Container>
             
            <ContactItemsList>
-                {contactInfo.map(item => {
+                {/* {contactInfo.map(item => {
                     let iconUrl = 'https:' + item.fields.icon.fields.file.url;
                     let text = item.fields.text;
                     let target = item.fields.text.includes('@') 
@@ -121,7 +121,7 @@ function Footer({ props }) {
                             }
                         </li>
                     )
-                })} 
+                })}  */}
             </ContactItemsList>
             <LogoContainer>
                 <Logo asset={logoAsset} />

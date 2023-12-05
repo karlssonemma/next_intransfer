@@ -57,7 +57,7 @@ export default function Form({ props }) {
                 required
             />
             <InputBlock 
-                name='business'
+                name='company'
                 type='text'
                 label='företag'
             />
